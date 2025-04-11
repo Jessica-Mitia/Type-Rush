@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeRush - Leaderboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/CSS/rank.css">
+    <script src="assets/JS/rank.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <div class="logo"></div>
+            <span class="brand-name">TypeRush</span>
+        </div>
+        
+        <div class="user-panel">
+            <a href="index.html"><button class="icon-btn"><i class="fa-solid fa-keyboard"></i></button></a>
+            <button class="icon-btn"><i class="fa-solid fa-trophy"></i></button>
+            <button class="icon-btn"><i class="fa-solid fa-gear"></i></button>
+            <div class="user-info">
+                <div class="avatar">F</div>
+                <span class="user-name">Fiderana17</span>
+                <span class="badge">0</span>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-group">
+                <h3 class="sidebar-title">Leaderboards</h3>
+                <div class="nav-item active">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>all-time english</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>weekly xp</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-solid fa-calendar-day"></i>
+                    <span>daily</span>
+                </div>
+            </div>
+            
+            <div class="sidebar-group">
+                <h3 class="sidebar-title">Test Mode</h3>
+                <div class="nav-item active">
+                    <i class="fa-solid fa-stopwatch"></i>
+                    <span>time 15</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-solid fa-stopwatch"></i>
+                    <span>time 60</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-solid fa-font"></i>
+                    <span>words 25</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-solid fa-font"></i>
+                    <span>words 50</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-solid fa-font"></i>
+                    <span>words 100</span>
+                </div>
+            </div>
+        </aside>
+        
+        <main class="content">
+            <div class="page-header">
+                <h1 class="page-title">All-time English Time 15 Leaderboard</h1>
+            </div>
+            
+            <div class="notification-card">
+                Your account must have 2 hours typed to be placed on the leaderboard.
+            </div>
+            
+            <div class="toolbar">
+                <div class="update-info">Next update in: 08:20</div>
+                <div class="actions">
+                    <button class="action-btn"><i class="fa-solid fa-crown"></i></button>
+                    <button class="action-btn"><i class="fa-solid fa-user"></i></button>
+                    <button class="action-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="action-btn"><i class="fa-solid fa-hashtag"></i></button>
+                    <button class="action-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+            
+            <table class="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th class="rank-cell">#</th>
+                        <th>name</th>
+                        <th>wpm</th>
+                        <th>accuracy</th>
+                        <th>raw</th>
+                        <th>consistency</th>
+                        <th>date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="rank-cell rank-1">1</td>
+                        <td>
+                            <div class="player-cell">
+                                <div class="player-icon"><i class="fa-solid fa-crown"></i></div>
+                                <div class="player-name">rocket</div>
+                                <span class="player-badge badge-mythical">Mythical</span>
+                            </div>
+                        </td>
+                        <td class="stat-value">304.76</td>
+                        <td class="stat-value">98.97%</td>
+                        <td class="stat-value">311.96</td>
+                        <td class="consistency-cell">
+                            <div class="stat-value high-consistency">92.70%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 92.7%"></div>
+                            </div>
+                        </td>
+                        <td class="date-cell">
+                            27 Aug 2023<br>14:24
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="rank-cell rank-2">2</td>
+                        <td>
+                            <div class="player-cell">
+                                <div class="player-icon"></div>
+                                <div class="player-name">fallenrelic</div>
+                            </div>
+                        </td>
+                        <td class="stat-value">304.74</td>
+                        <td class="stat-value perfect-accuracy">100.00%</td>
+                        <td class="stat-value">304.74</td>
+                        <td class="consistency-cell">
+                            <div class="stat-value high-consistency">91.40%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 91.4%"></div>
+                            </div>
+                        </td>
+                        <td class="date-cell">
+                            25 Dec 2024<br>11:28
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="rank-cell rank-3">3</td>
+                        <td>
+                            <div class="player-cell">
+                                <div class="player-icon"></div>
+                                <div class="player-name">saerith</div>
+                            </div>
+                        </td>
+                        <td class="stat-value">304.60</td>
+                        <td class="stat-value">98.48%</td>
+                        <td class="stat-value">315.79</td>
+                        <td class="consistency-cell">
+                            <div class="stat-value high-consistency">90.53%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90.53%"></div>
+                            </div>
+                        </td>
+                        <td class="date-cell">
+                            25 Jun 2023<br>03:20
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="rank-cell">4</td>
+                        <td>
+                            <div class="player-cell">
+                                <div class="player-icon"></div>
+                                <div class="player-name">joshua728</div>
+                            </div>
+                        </td>
+                        <td class="stat-value">294.20</td>
+                        <td class="stat-value">98.92%</td>
+                        <td class="stat-value">297.40</td>
+                        <td class="consistency-cell">
+                            <div class="stat-value high-consistency">90.32%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90.32%"></div>
+                            </div>
+                        </td>
+                        <td class="date-cell">
+                            25 Jun 2023<br>05:03
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="rank-cell">5</td>
+                        <td>
+                            <div class="player-cell">
+                                <div class="player-icon"></div>
+                                <div class="player-name">APackOfSmarties</div>
+                            </div>
+                        </td>
+                        <td class="stat-value">285.55</td>
+                        <td class="stat-value perfect-accuracy">100.00%</td>
+                        <td class="stat-value">285.55</td>
+                        <td class="consistency-cell">
+                            <div class="stat-value high-consistency">94.64%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 94.64%"></div>
+                            </div>
+                        </td>
+                        <td class="date-cell">
+                            18 Dec 2024<br>21:44
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="rank-cell">6</td>
+                        <td>
+                            <div class="player-cell">
+                                <div class="player-icon"></div>
+                                <div class="player-name">dragoncityjose</div>
+                            </div>
+                        </td>
+                        <td class="stat-value">280.76</td>
+                        <td class="stat-value perfect-accuracy">100.00%</td>
+                        <td class="stat-value">280.76</td>
+                        <td class="consistency-cell">
+                            <div class="stat-value high-consistency">95.37%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95.37%"></div>
+                            </div>
+                        </td>
+                        <td class="date-cell">
+                            25 Mar 2025<br>22:10
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="rank-cell">7</td>
+                        <td>
+                            <div class="player-cell">
+                                <div class="player-icon"></div>
+                                <div class="player-name">Xander3</div>
+                            </div>
+                        </td>
+                        <td class="stat-value">280.72</td>
+                        <td class="stat-value perfect-accuracy">100.00%</td>
+                        <td class="stat-value">280.72</td>
+                        <td class="consistency-cell">
+                            <div class="stat-value high-consistency">92.23%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 92.23%"></div>
+                            </div>
+                        </td>
+                        <td class="date-cell">
+                            27 Jan 2025<br>22:23
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="rank-cell">8</td>
+                        <td>
+                            <div class="player-cell">
+                                <div class="player-icon"></div>
+                                <div class="player-name">slekap</div>
+                                <span class="player-badge badge-gold">Gold Account</span>
+                            </div>
+                        </td>
+                        <td class="stat-value">277.60</td>
+                        <td class="stat-value">99.15%</td>
+                        <td class="stat-value">281.60</td>
+                        <td class="consistency-cell">
+                            <div class="stat-value">87.96%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 87.96%"></div>
+                            </div>
+                        </td>
+                        <td class="date-cell">
+                            11 Nov 2021<br>07:24
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+</html>
