@@ -375,3 +375,10 @@ header {
 .high-consistency {
     color: #4CAF50;
 }
+
+
+@media (max-width: 768px) {
+    body{
+        
+    }
+}
