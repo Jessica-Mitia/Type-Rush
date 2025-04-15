@@ -4,7 +4,9 @@
 }
 
 body{
-    background-color: black;
+    background-image: url(../Images/MuchaTseBle.jpg);
+    background-repeat: repeat-x;
+    object-fit: cover;
     font-family: 'Montserrat', sans-serif;
     color: white;
 }
@@ -82,13 +84,13 @@ nav ul li a:hover {
 }
 
 main{
-    padding-block: 100px;
+    padding-block: 30px;
     padding-inline: 100px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 250px;
+    gap: 25%;
 }
 
 .account_form{
@@ -97,8 +99,8 @@ main{
     display: flex;
     flex-direction: column;
     width: 30%;
-    padding-inline: 50px;
-    padding-block: 30px;
+    padding-inline: 30px;
+    padding-block: 40px;
     gap: 20px;
     height: 100%;
 }
@@ -110,9 +112,51 @@ main{
 }
 
 .account_form input{
-    width: 80%;
-    height: 30px;
-    border-radius: 10px;
+    width: 90%;
     border: none;
+}
+
+.input-field {
+    background-color: white;
+    border-radius: 10px;
+    height: 40px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.account_form_button {
+    background-color: #05920c;
+    padding-block: 10px;
+    text-align: center;
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    margin: auto;
+    margin-block: 20px;
+}
+
+#sign-up{
+    margin-block: 10px;
+}
+
+.account_form_button:hover{
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+.account_form p{
+    text-align: center;
+}
+
+.account_form p a{
+    color: #05920c;
+    text-decoration: none;
+}
+
+.account_form p a:hover{
+    text-decoration: underline;
 }
 
