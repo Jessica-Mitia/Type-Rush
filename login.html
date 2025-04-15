@@ -53,36 +53,42 @@
         <form class="account_form">
             <h2><i class="fa-solid fa-circle-user"></i>  register</h2>
             <div class="account_information">
-                <label for="name">Name</label>
-                <input id="name" type="text" required>
-            </div>
-            <div class="account_information">
                 <label for="email">Email</label>
-                <input id="email" type="email" required>
+                <input id="email" type="email" class="input-field" placeholder="Enter your email" required>
             </div>
             <div class="account_information">
                 <label for="username">Username</label>
-                <input id="username" type="text" required>
+                <input id="username" class="input-field" type="text" placeholder="Create an username" required>
             </div>
             <div class="account_information">
                 <label for="password">Password</label>
-                <input id="password" type="password" required>
+                <input id="password" class="input-field" type="password" placeholder="Create a password" required>
             </div>
             <div class="account_information">
                 <label for="confirmation">Confirm password</label>
-                <input id="confirmation" type="password" required>
+                <input id="confirmation" class="input-field" type="password" placeholder="Confirm password" required>
             </div>
+            <button type="submit" class="account_form_button" id="sign-up">Sign up</button>
+            <p>Have already an account?<a href="#" class="toggleLink">Sign in</a></p>
         </form>
-        <form action="index.html" class="account_form">
+        <form action="index.html" class="account_form active">
           <h2><i class="fa-solid fa-right-to-bracket"></i>  Sign in</h2>
           <div class="account_information">
             <label for="username">Username</label>
-            <input id="username" type="text" required>
+            <div class="input-field">
+              <i class="fa-solid fa-user" style="color: rgb(52, 50, 50);"></i>
+              <input id="username" type="text" placeholder="Enter your username" required>
+            </div>
           </div>
           <div class="account_information">
             <label for="password">Password</label>
-            <input id="password" type="password" required>
+            <div class="input-field">
+              <i class="fa-solid fa-lock" style="color: rgb(52, 50, 50);"></i>
+              <input id="password" type="password" placeholder="Enter your password" required>
+            </div>
           </div>
+          <button type="submit" class="account_form_button">Sign in</button>
+          <p>Do not have an account yet?<a href="#" class="toggleLink">Sign up</a></p>
         </form>
     </main>
 </body>
