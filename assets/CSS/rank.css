@@ -15,6 +15,7 @@
 }
 a{
     text-decoration: none;
+    color: var(--text-secondary);
 }
 
 body {
@@ -42,22 +43,15 @@ header {
     gap: 12px;
 }
 
-.logo {
+.logo img{
     position: relative;
     background-color: var(--primary);
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.logo::after {
-    content: "tr";
-    color: rgba(0, 0, 0, 0.7);
-    font-weight: bold;
-    font-size: 16px;
 }
 
 .brand-name {
