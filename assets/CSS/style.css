@@ -171,7 +171,12 @@ button:hover {
 .input-field:focus {
     border-color: var(--main-color);
 }
-
+.typing-indicator {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #666;
+}
 .results {
     display: flex;
     flex-direction: column;
