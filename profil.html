@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeRush-profile</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/CSS/profil.css">
+    <script src="assets/JS/profil.js" defer></script>
+    <link rel="icon" href="assets/Images/logo.png">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <span class="logo-icon"><img src="assets/Images/logo.png" alt=""></span>
+            <h1 class="logo-text">Type<span>Rush</span></h1>
+        </div>
+        <div class="header-right">
+            <a href="home.html"><button class="icon-btn"><i class="fa-solid fa-house"></i></button></a>
+            <a href="index.html"><button class="icon-btn"><i class="fa-solid fa-keyboard"></i></button></a>
+            <a href="rank.html"><button class="icon-btn"><i class="fa-solid fa-trophy"></i></button></a>
+            <a href="setting.html"><button class="icon-btn"><i class="fa-solid fa-gear"></i></button></a>
+            <div class="user-info">
+                <div class="avatar">D</div>
+               <a href="profil.html"> <span class="user-name">demo</span></a>
+                <span class="badge">3</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="notification">
+        <div>
+            <span class="alert-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+            <span>Your email address is still not verified</span>
+        </div>
+        <button class="btn">resend verification email</button>
+    </div>
+    
+    <div class="profile-section">
+        <div class="profile-pic">👤</div>
+        <div class="profile-info">
+            <h2 class="username">demo</h2>
+            <p class="join-date">Joined 16 Mar 2023</p>
+            <p class="streak">Current streak: 4 days</p>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <span style="font-size: 12px; color: var(--muted-text);">138/492</span>
+        </div>
+    </div>
+    
+    <div class="stats-row">
+        <div class="stat-box">
+            <div class="stat-value">132</div>
+            <div class="stat-label">tests started</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-value">57</div>
+            <div class="stat-label">tests completed</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-value">00:19:34</div>
+            <div class="stat-label">time typing</div>
+        </div>
+    </div>
+    
+    <div class="time-stats">
+        <div class="time-column">
+            <div class="time-header">15 seconds</div>
+            <div class="time-stat">
+                <div class="time-value">53</div>
+                <div class="time-percentage">98%</div>
+            </div>
+            
+            <div class="time-header">30 seconds</div>
+            <div class="time-stat">
+                <div class="time-value">36</div>
+                <div class="time-percentage">89%</div>
+            </div>
+        </div>
+        <div class="time-column">
+            <div class="time-header">60 seconds</div>
+            <div class="time-stat">
+                <div class="time-value">-</div>
+                <div class="time-percentage">-</div>
+            </div>
+            
+            <div class="time-header">120 seconds</div>
+            <div class="time-stat">
+                <div class="time-value">-</div>
+                <div class="time-percentage">-</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="graph-section">
+        <div class="graph-info">
+            <div class="graph-stat">Speed change per hour spent typing: +20.10 wpm</div>
+            <div class="tab-buttons">
+                <button class="tab-btn">Speed</button>
+                <button class="tab-btn active">Accuracy</button>
+                <button class="tab-btn">Avg of 10</button>
+                <button class="tab-btn">Avg of 100</button>
+            </div>
+        </div>
+        
+        <div class="graph">
+            <svg class="graph-line" viewBox="0 0 100 30">
+                <path d="M0,15 C10,10 20,18 30,15 C40,12 50,15 60,18 C70,20 80,16 90,12 C95,14 100,13" stroke="var(--primary)" fill="none" stroke-width="1"/>
+            </svg>
+        </div>
+        
+        <div class="bar-chart">
+            <div class="bar" style="height: 5%;"></div>
+            <div class="bar" style="height: 0;"></div>
+            <div class="bar" style="height: 10%;"></div>
+            <div class="bar" style="height: 40%;"></div>
+            <div class="bar" style="height: 100%;"></div>
+            <div class="bar" style="height: 20%;"></div>
+        </div>
+        
+        <div class="bar-labels">
+            <span>0-9</span>
+            <span>10-19</span>
+            <span>20-29</span>
+            <span>30-39</span>
+            <span>40-49</span>
+            <span>50-59</span>
+        </div>
+        
+        <div class="day-chart">
+            <div class="day-bar" style="height: 100%;"></div>
+            <div class="day-bar" style="height: 20%;"></div>
+            <div class="day-bar" style="height: 40%;"></div>
+            <div class="day-bar" style="height: 15%;"></div>
+        </div>
+        
+        <div class="day-labels">
+            <span>18 Mar</span>
+            <span>19 Mar</span>
+            <span>20 Mar</span>
+            <span>21 Mar</span>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; color: var(--muted-text);">
+            <span>estimated words typed</span>
+            <div style="font-size: 36px; color: var(--text-color);">616</div>
+        </div>
+    </div>
+    
+    <div class="activity-chart">
+        <div class="activity-header">
+            <div class="activity-filter">
+                <span class="filter-label">last 12 months</span>
+                <span class="filter-value">▼</span>
+            </div>
+            <div class="activity-filter">
+                <span class="filter-label">57 tests</span>
+                <span class="filter-label">less</span>
+                <span style="display: flex; gap: 3px;">
+                    <span class="day-cell"></span>
+                    <span class="day-cell" style="background-color: var(--primary); opacity: 0.3;"></span>
+                    <span class="day-cell" style="background-color: var(--primary); opacity: 0.6;"></span>
+                    <span class="day-cell" style="background-color: var(--primary);"></span>
+                </span>
+                <span class="filter-label">more</span>
+            </div>
+        </div>
+        
+        <div class="calendar">
+            <div class="weekday">monday</div>
+            <div class="weekday">wednesday</div>
+            <div class="weekday">friday</div>
+            <div class="weekday">sunday</div>
+            
+            <!-- Months -->
+            <div class="month">apr</div>
+            <div class="month">may</div>
+            <div class="month">jun</div>
+            <div class="month">jul</div>
+            <div class="month">aug</div>
+            <div class="month">sep</div>
+            <div class="month">oct</div>
+            <div class="month">nov</div>
+            <div class="month">dec</div>
+            <div class="month">jan</div>
+            <div class="month">feb</div>
+            <div class="month">mar</div>
+        </div>
+        
+        <!-- Calendar grid would be here with lots of cells -->
+        
+        <div class="filter-buttons">
+            <button class="filter-btn">all</button>
+            <button class="filter-btn">current settings</button>
+            <button class="filter-btn">advanced</button>
+            <button class="filter-btn">save as preset</button>
+        </div>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn">last day</button>
+            <button class="filter-btn">last week</button>
+            <button class="filter-btn">last month</button>
+            <button class="filter-btn">last 3 months</button>
+            <button class="filter-btn active">all time</button>
+        </div>
+    </div>
+    
+    <div class="detailed-stats">
+        <div class="detailed-grid">
+            <div class="stat-group">
+                <div class="stat-title">highest wpm</div>
+                <div class="stat-detail">53</div>
+                <div class="stat-subtitle">time 15</div>
+            </div>
+            
+            <div class="stat-group">
+                <div class="stat-title">average wpm</div>
+                <div class="stat-detail">42</div>
+            </div>
+            
+            <div class="stat-group">
+                <div class="stat-title">average wpm (last 10 tests)</div>
+                <div class="stat-detail">43</div>
+            </div>
+            
+            <div class="stat-group">
+                <div class="stat-title">highest raw wpm</div>
+                <div class="stat-detail">53</div>
+            </div>
+            
+            <div class="stat-group">
+                <div class="stat-title">average raw wpm</div>
+                <div class="stat-detail">43</div>
+            </div>
+            
+            <div class="stat-group">
+                <div class="stat-title">average raw wpm (last 10 tests)</div>
+                <div class="stat-detail">44</div>
+            </div>
+            
+            <div class="stat-group">
+                <div class="stat-title">highest accuracy</div>
+                <div class="stat-detail">100%</div>
+            </div>
+            
+            <div class="stat-group">
+                <div class="stat-title">avg accuracy</div>
+                <div class="stat-detail">91%</div>
+            </div>
+            
+            <div class="stat-group">
+                <div class="stat-title">avg accuracy (last 10 tests)</div>
+                <div class="stat-detail">89%</div>
+            </div>
+            
+            <div class="stat-group">
+                <div class="stat-title">highest consistency</div>
+                <div class="stat-detail">84%</div>
+            </div>
+            
+            <div class="stat-group">
+                <div class="stat-title">avg consistency</div>
+                <div class="stat-detail">68%</div>
+            </div>
+            
+            <div class="stat-group">
+                <div class="stat-title">avg consistency (last 10 tests)</div>
+                <div class="stat-detail">72%</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="export-button">
+        <button class="export-btn">
+            <span class="export-icon">📂</span>
+            Export CSV
+        </button>
+    </div>
+</body>
+</html>

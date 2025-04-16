@@ -13,11 +13,10 @@ let timerInterval = null;
 let timeLeft = 30;
 let isTestActive = false;
 let isTestComplete = false;
-
+let currentTypedText = ""; // Pour stocker le texte actuellement tapé
 
 const modeSelect = document.getElementById("mode");
 const wordDisplay = document.getElementById("word-display");
-const inputField = document.getElementById("input-field");
 const results = document.getElementById("results");
 const timerElement = document.getElementById("timer");
 const wpmElement = document.getElementById("wpm");
@@ -26,33 +25,27 @@ const charsElement =  document.getElementById("chars");
 const restartButton = document.getElementById("restart-button");
 const timeOptions = document.querySelectorAll(".time-option");
 
-
-
 // Generate a random word from the selected mode
 const getRandomWord = (mode) => {
     const wordList = words[mode];
     return wordList[Math.floor(Math.random() * wordList.length)];
 };
 
-
-
 // Create spans for each letter of the word
-const createLetterSpans = (word,wordIndex) =>{
+const createLetterSpans = (word, wordIndex) => {
     const wordSpan = document.createElement("span");
     wordSpan.id = `word-${wordIndex}`;
     wordSpan.className = "word";
     wordSpan.dataset.word = word;
 
-
     // Create a span for each letter
-    for(let i = 0; i < word.length; i ++){
+    for(let i = 0; i < word.length; i++) {
         const letterSpan = document.createElement("span");
         letterSpan.className = "letter";
         letterSpan.textContent = word[i];
         letterSpan.dataset.correctLetter = word[i];
         wordSpan.appendChild(letterSpan);
     }
-
 
     // Add a space after the word
     const spaceSpan = document.createElement("span");
@@ -61,8 +54,7 @@ const createLetterSpans = (word,wordIndex) =>{
     wordSpan.appendChild(spaceSpan);
 
     return wordSpan;
-
-} ;
+};
 
 // Initialize the typing test
 const startTest = (wordCount = 100) => {
@@ -72,7 +64,7 @@ const startTest = (wordCount = 100) => {
     totalCorrectChars = 0;
     totalTypedChars = 0;
     isTestComplete = false;
-
+    currentTypedText = ""; // Reset current typed text
 
     // Hide retry button
     restartButton.style.display = "none";
@@ -91,7 +83,7 @@ const startTest = (wordCount = 100) => {
         wordsToType.push(getRandomWord(modeSelect.value));
     }
 
-    //  Display words
+    // Display words
     wordsToType.forEach((word, index) => {
         const wordSpan = createLetterSpans(word, index);
         wordDisplay.appendChild(wordSpan);
@@ -103,72 +95,81 @@ const startTest = (wordCount = 100) => {
         firstWord.classList.add("current");
     }
 
-
-    // Activate and focus on input field
-    inputField.value = "";
-    inputField.disabled = false;
-    inputField.focus();
-    isTestActive = false
+    isTestActive = false;
     startTime = null;
+    
+    // Ajouter un message pour informer l'utilisateur de commencer à taper
+    const typingIndicator = document.querySelector(".typing-indicator");
+    if (typingIndicator) {
+        typingIndicator.textContent = "Start typing anywhere to begin!";
+        typingIndicator.style.display = "block";
+    }
 };
 
 // Start countdown
 const startTimer = () => {
-    if (!isTestActive){ 
+    if (!isTestActive) { 
         isTestActive = true;
         startTime = Date.now();
+        
+        // Cacher le message d'indication
+        const typingIndicator = document.querySelector(".typing-indicator");
+        if (typingIndicator) {
+            typingIndicator.style.display = "none";
+        }
 
-        timerInterval = setInterval(() =>{
+        timerInterval = setInterval(() => {
             timeLeft--;
             timerElement.textContent = timeLeft;
 
-
             updateStats();
 
-            if (timeLeft <= 0){
+            if (timeLeft <= 0) {
                 endTest();
             } 
-
         }, 1000);
     }
 };
-
 
 // End test
 const endTest = () => {
     clearInterval(timerInterval);
     isTestComplete = true;
-    inputField.disabled = true;
+
+    // Afficher un message indiquant la fin du test
+    const typingIndicator = document.querySelector(".typing-indicator");
+    if (typingIndicator) {
+        typingIndicator.textContent = "Test complete! Press 'Retry' to start again.";
+        typingIndicator.style.display = "block";
+    }
 
     updateStats(true);
-
     restartButton.style.display = "block";
 };
-
 
 // Calculate and return WPM & accuracy
 const calculateAccuracy = (expectedWord, typedWord) => {
     let correctChars = 0;
     const minLength = Math.min(expectedWord.length, typedWord.length);
 
-    for(let i=0; i<minLength;i++){
+    for(let i = 0; i < minLength; i++) {
         if (expectedWord[i] === typedWord[i]) {
             correctChars++;
         }
     }
     return correctChars;
-}
+};
 
-  // Highlight characters while typing
-  const highlightCharacters = () => {
+// Highlight characters while typing
+const highlightCharacters = () => {
     const currentWord = document.getElementById(`word-${currentWordIndex}`);
     if (!currentWord) return;
 
-    const typedValue = inputField.value;
+    const typedValue = currentTypedText;
     const letters = currentWord.querySelectorAll(".letter:not(.space)");
     const word = wordsToType[currentWordIndex];
 
-    //Reset all letter styles
+    // Reset all letter styles
     letters.forEach(letter => {
         letter.classList.remove("correct", "incorrect");
     });
@@ -204,7 +205,7 @@ const calculateAccuracy = (expectedWord, typedWord) => {
 
 // Check the word and move on to the next
 const checkWord = () => {
-    const typedWord = inputField.value.trim();
+    const typedWord = currentTypedText.trim();
     const currentWord = wordsToType[currentWordIndex];
     const wordElement = document.getElementById(`word-${currentWordIndex}`);
 
@@ -216,7 +217,7 @@ const checkWord = () => {
     // Update statistics
     updateStats();
 
-    //  Mark word as completed
+    // Mark word as completed
     wordElement.classList.remove("current");
     wordElement.classList.add("completed");
 
@@ -233,7 +234,7 @@ const checkWord = () => {
     // Skip to next word if test not completed
     if (!isTestComplete) {
         highlightNextWord();
-        inputField.value = "";
+        currentTypedText = "";
     }
 };
 
@@ -279,20 +280,46 @@ const updateStats = (isFinal = false) => {
     }
 };
 
-// Event managers
-inputField.addEventListener("input", () => {
-    startTimer();
-    highlightCharacters();
-});
+// Capture keystrokes at document level
+document.addEventListener("keydown", (event) => {
+    // If test is complete, ignore keypresses except for restart shortcuts
+    if (isTestComplete) {
+        // Optionally add a shortcut to restart, like pressing 'R'
+        if (event.key.toLowerCase() === 'r') {
+            timeLeft = parseInt(document.querySelector(".time-option.active").dataset.time);
+            startTest();
+        }
+        return;
+    }
 
-inputField.addEventListener("keydown", (event) => {
-    // Check space to move to next word
+    // Start timer on first keystroke
+    if (!isTestActive && event.key.length === 1) {
+        startTimer();
+    }
+    
+    // Handle special keys
+    if (event.key === "Backspace") {
+        currentTypedText = currentTypedText.slice(0, -1);
+        highlightCharacters();
+        return;
+    } 
+    
     if (event.key === " ") {
-        event.preventDefault();  // Prevent spaces from being added
-        if (inputField.value.trim() !== "") {
+        event.preventDefault(); // Prevent page scroll
+        if (currentTypedText.trim() !== "") {
             checkWord();
         }
+        return;
     }
+    
+    // Ignore control keys, tab, etc.
+    if (event.key.length !== 1 || event.ctrlKey || event.altKey || event.metaKey) {
+        return;
+    }
+    
+    // Add character to current typed text
+    currentTypedText += event.key;
+    highlightCharacters();
 });
 
 // Change difficulty mode
@@ -327,9 +354,11 @@ window.addEventListener("load", () => {
     startTest();
 });
 
-// Prevent loss of focus on the input field
-document.addEventListener("click", () => {
-    if (!isTestComplete) {
-        inputField.focus();
+// Prevent clicks from disrupting typing
+document.addEventListener("click", (event) => {
+    // Allow clicks on buttons and select
+    if (event.target.tagName !== "BUTTON" && event.target.tagName !== "SELECT" && 
+        !event.target.classList.contains("time-option")) {
+        event.preventDefault();
     }
 });
