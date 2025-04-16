@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Test</title>
+    <title>TypeRush</title>
+    <link rel="stylesheet" href="assets/CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/Images/logo.png">
 </head>
-
 <body>
+   
     <header>
-        <h1>Typing Test</h1>
+        <h1>TypeRush</h1>
         <label for="mode">Select Mode:</label>
+        <div class="options">
         <select id="mode">
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
             <option value="hard">Hard</option>
         </select>
+    </div>
     </header>
-
-    <main>
-        <p id="word-display"></p>
-        <input type="text" id="input-field" autofocus>
-        <p id="results">Results : </p>
-    </main>
-
-    <script src="script.js"></script>
+   
+    <div class="time-options">
+        <div class="time-option" data-time="15">15s</div>
+        <div class="time-option active" data-time="30">30s</div>
+        <div class="time-option" data-time="60">60s</div>
+        <div class="time-option" data-time="120">2min</div>
+    </div>
+    <div class="typing-container">
+        <div class="timer" id="timer">30</div>
+        <div class="word-display" id="word-display"></div>
+        <div class="input-area">
+            <!-- Input field removed -->
+            <div class="typing-indicator">Start typing anywhere to begin!</div>
+            <div class="results" id="results">
+                <div>WPM: <span id="wpm">0</span></div>
+                <div>Accuracy: <span id="accuracy">100%</span></div>
+                <div>Character: <span id="chars">0/0</span></div>
+            </div>
+        </div>
+    </div>
+    <button id="restart-button" class="restart-button">Retry</button>
+    <script src="assets/JS/script.js"></script>
 </body>
-
 </html>
