@@ -87,10 +87,7 @@ main{
     padding-block: 30px;
     padding-inline: 100px;
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: center;
-    gap: 25%;
 }
 
 .account_form{
@@ -98,17 +95,26 @@ main{
     border-radius: 25px;
     display: flex;
     flex-direction: column;
-    width: 30%;
     padding-inline: 30px;
     padding-block: 40px;
     gap: 20px;
     height: 100%;
+    width: 400px;
+}
+
+.form--hidden{
+    display: none;
+}
+
+.form--unhidden{
+    display: block;
 }
 
 .account_information{
     display: flex;
     flex-direction: column;
     gap: 5px;
+    margin-block: 20px;
 }
 
 .account_form input{
@@ -134,7 +140,7 @@ main{
     border: none;
     border-radius: 5px;
     font-size: 20px;
-    margin: auto;
+    margin-inline: 20%;
     margin-block: 20px;
 }
 
