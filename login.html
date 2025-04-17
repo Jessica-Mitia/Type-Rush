@@ -41,16 +41,13 @@
             <nav>
               <ul>
                 <li><a href="home.html">Home</a></li>
-                <li><a href="#">Exercises</a></li>
                 <li><a href="rank.html">Ranking</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="login.html" class="btn">Start</a></li>
               </ul>
             </nav>
           </div>
     </header>
     <main>
-        <form class="account_form">
+        <form id="CreateAccount" class="account_form form--hidden">
             <h2><i class="fa-solid fa-circle-user"></i>  register</h2>
             <div class="account_information">
                 <label for="email">Email</label>
@@ -69,9 +66,9 @@
                 <input id="confirmation" class="input-field" type="password" placeholder="Confirm password" required>
             </div>
             <button type="submit" class="account_form_button" id="sign-up">Sign up</button>
-            <p>Have already an account?<a href="#" class="toggleLink">Sign in</a></p>
+            <p>Have already an account? <a id="linkLogin" href="#Login"> Sign in</a></p>
         </form>
-        <form action="index.html" class="account_form active">
+        <form id="Login" class="account_form form--unhidden">
           <h2><i class="fa-solid fa-right-to-bracket"></i>  Sign in</h2>
           <div class="account_information">
             <label for="username">Username</label>
@@ -88,8 +85,10 @@
             </div>
           </div>
           <button type="submit" class="account_form_button">Sign in</button>
-          <p>Do not have an account yet?<a href="#" class="toggleLink">Sign up</a></p>
+          <p>Do not have account yet? <a id="linkCreateAccount" href="#createAccount"> Sign up</a></p>
         </form>
     </main>
+
+    <script src="assets/JS/login.js"></script>
 </body>
 </html>
