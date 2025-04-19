@@ -5,43 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TypeRush</title>
     <link rel="stylesheet" href="assets/CSS/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/Images/logo.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
 </head>
 <body>
-   
     <header>
-        <h1>TypeRush</h1>
-        <label for="mode">Select Mode:</label>
-        <div class="options">
-        <select id="mode">
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-        </select>
-    </div>
-    </header>
-   
-    <div class="time-options">
-        <div class="time-option" data-time="15">15s</div>
-        <div class="time-option active" data-time="30">30s</div>
-        <div class="time-option" data-time="60">60s</div>
-        <div class="time-option" data-time="120">2min</div>
-    </div>
-    <div class="typing-container">
-        <div class="timer" id="timer">30</div>
-        <div class="word-display" id="word-display"></div>
-        <div class="input-area">
-            <!-- Input field removed -->
-            <div class="typing-indicator">Start typing anywhere to begin!</div>
-            <div class="results" id="results">
-                <div>WPM: <span id="wpm">0</span></div>
-                <div>Accuracy: <span id="accuracy">100%</span></div>
-                <div>Character: <span id="chars">0/0</span></div>
+        <div class="brand">
+            <div class="logo"><img src="assets/Images/logo.png" alt="TypeRush Logo"></div>
+            <span class="brand-name">Type<span>Rush</span></span>
+            <a href="home.html"><button class="icon-btn"><i class="fa-solid fa-house"></i></button></a>
+        </div>
+       
+        <div class="user-panel">
+            <a href="index.html"><button class="icon-btn active"><i class="fa-solid fa-keyboard"></i></button></a>
+            <a href="rank.html"><button class="icon-btn"><i class="fa-solid fa-trophy"></i></button></a>
+            <div class="user-info">
+                <div class="avatar">D</div>
+                <a href="profil.html"><span class="user-name">demo</span></a>
+                <span class="badge">3</span>
             </div>
         </div>
+    </header>
+
+    <div class="typing-test-container">
+        <div class="options-wrapper">
+            <div class="difficulty-options">
+                <div class="option-title">Difficulty</div>
+                <div class="option-buttons difficulty-buttons">
+                    <button class="difficulty-option active" data-difficulty="easy">Easy</button>
+                    <button class="difficulty-option" data-difficulty="medium">Medium</button>
+                    <button class="difficulty-option" data-difficulty="hard">Hard</button>
+                </div>
+            </div>
+            
+            <div class="time-options-container">
+                <div class="option-title">Time</div>
+                <div class="option-buttons time-buttons">
+                    <button class="time-option" data-time="15">15s</button>
+                    <button class="time-option active" data-time="30">30s</button>
+                    <button class="time-option" data-time="60">60s</button>
+                    <button class="time-option" data-time="120">2min</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="typing-container">
+            <div class="timer-container">
+                <div class="timer" id="timer">30</div>
+            </div>
+            
+            <div class="word-display" id="word-display"></div>
+            
+            <div class="typing-indicator">Start typing anywhere to begin!</div>
+        </div>
+
+        <button id="restart-button" class="restart-button">Retry Test</button>
+        
+        <div class="performance-chart-container" id="performance-chart-container">
+        <div class="test-statistics" id="test-statistics">
+            <div class="stat-card">
+                <div class="stat-value" id="final-wpm">0</div>
+                <div class="stat-label">WPM</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="final-accuracy">0%</div>
+                <div class="stat-label">Accuracy</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="final-chars">0/0</div>
+                <div class="stat-label">Characters</div>
+            </div>
+        </div>
+
+            <h3>Your Performance</h3>
+            <canvas id="performanceChart"></canvas>
+        </div>
+
+  
     </div>
-    <button id="restart-button" class="restart-button">Retry</button>
+
     <script src="assets/JS/script.js"></script>
 </body>
 </html>
