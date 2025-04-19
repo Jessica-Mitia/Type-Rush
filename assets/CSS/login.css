@@ -32,6 +32,13 @@ header {
     align-items: center;
 }
 
+.logo img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -118,7 +125,7 @@ main{
 }
 
 .account_form input{
-    width: 90%;
+    width: 80%;
     border: none;
 }
 
@@ -131,6 +138,10 @@ main{
     align-items: center;
     gap: 15px;
 }
+
+input:focus {
+    outline: none;
+}  
 
 .account_form_button {
     background-color: #05920c;
@@ -166,3 +177,32 @@ main{
     text-decoration: underline;
 }
 
+.account_information .error-message {
+    color: rgba(245, 26, 48, 0.992);
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+.account_information.error input {
+    border-color:rgba(245, 26, 48, 0.992);
+}
+
+.account_information.error .error-message {
+    display: block;
+}
+
+
+@media ( width < 700px ){
+    main{
+        padding-inline: 20px;
+    }
+
+    .account_form{
+        width: 300px;
+    }
+
+    .account_form h2{
+        padding-left: 20px;
+    }
+}

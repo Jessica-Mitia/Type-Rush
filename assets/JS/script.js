@@ -355,10 +355,10 @@ window.addEventListener("load", () => {
 });
 
 // Prevent clicks from disrupting typing
-document.addEventListener("click", (event) => {
-    // Allow clicks on buttons and select
-    if (event.target.tagName !== "BUTTON" && event.target.tagName !== "SELECT" && 
-        !event.target.classList.contains("time-option")) {
-        event.preventDefault();
-    }
-});
+// document.addEventListener("click", (event) => {
+//     // Allow clicks on buttons and select
+//     if (event.target.tagName !== "BUTTON" && event.target.tagName !== "SELECT" && 
+//         !event.target.classList.contains("time-option")) {
+//         event.preventDefault();
+//     }
+// });

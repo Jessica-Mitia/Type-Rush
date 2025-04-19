@@ -7,35 +7,13 @@
     <link rel="stylesheet" href="assets/CSS/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="icon" href="assets/Images/logo.png">
 </head>
 <body>
     <header>
         <div class="container nav-container">
             <div class="logo">
-              <svg
-                width="30"
-                height="30"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M17 7L15 9L17 11M7 7L9 9L7 11M12 14L12 17"
-                  stroke="#4CAF50"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <rect
-                  x="3"
-                  y="3"
-                  width="18"
-                  height="18"
-                  rx="3"
-                  stroke="#4CAF50"
-                  stroke-width="2"
-                />
-              </svg>
+              <img src="assets/Images/logo.png" alt="logo">
               <h1>Type<span>Rush</span></h1>
             </div>
             <nav>
@@ -47,42 +25,60 @@
           </div>
     </header>
     <main>
-        <form id="CreateAccount" class="account_form form--hidden">
+        <form id="CreateAccount" class="account_form form--hidden" action="index.html">
             <h2><i class="fa-solid fa-circle-user"></i>  register</h2>
             <div class="account_information">
                 <label for="email">Email</label>
-                <input id="email" type="email" class="input-field" placeholder="Enter your email" required>
+                <div class="input-field">
+                  <input id="email" type="email" class="input-field" placeholder="Enter your email" required>
+                </div>
             </div>
             <div class="account_information">
-                <label for="username">Username</label>
-                <input id="username" class="input-field" type="text" placeholder="Create an username" required>
+                <label for="regUsername">Username</label>
+                <div class="input-field">
+                  <input id="regUsername" class="input-field" type="text" placeholder="Create an username" required>
+                </div>
             </div>
-            <div class="account_information">
-                <label for="password">Password</label>
-                <input id="password" class="input-field" type="password" placeholder="Create a password" required>
+            <div class="account_information" id="regPasswordGroup">
+                <label for="regPassword">Password</label>
+                <div class="input-field">
+                  <i class="fa-solid fa-lock" style="color: rgb(52, 50, 50);"></i>
+                  <input id="regPassword" type="password" placeholder="Enter your password" required>
+                  <span class="regPassword-toggle" id="regPasswordToggle">👁️</span>
+                </div>
+                <div class="error-message" id="passwordError">The password must be at least 6 characters long</div>
             </div>
-            <div class="account_information">
+            <div class="account_information" id="confirmPasswordGroup">
                 <label for="confirmation">Confirm password</label>
-                <input id="confirmation" class="input-field" type="password" placeholder="Confirm password" required>
+                <div class="input-field">
+                  <i class="fa-solid fa-lock" style="color: rgb(52, 50, 50);"></i>
+                  <input id="confirmation" type="password" placeholder="Enter your password" required>
+                  <span class="password-toggle" id="confirmPasswordToggle">👁️</span>
+                </div>
+                <div class="error-message" id="confirmPasswordError">The passwords do not match</div>
             </div>
             <button type="submit" class="account_form_button" id="sign-up">Sign up</button>
             <p>Have already an account? <a id="linkLogin" href="#Login"> Sign in</a></p>
         </form>
-        <form id="Login" class="account_form form--unhidden">
+        
+        <form id="Login" class="account_form form--unhidden" action="index.html">
           <h2><i class="fa-solid fa-right-to-bracket"></i>  Sign in</h2>
-          <div class="account_information">
+          <div class="account_information" id="usernameGroup">
             <label for="username">Username</label>
             <div class="input-field">
               <i class="fa-solid fa-user" style="color: rgb(52, 50, 50);"></i>
               <input id="username" type="text" placeholder="Enter your username" required>
             </div>
           </div>
-          <div class="account_information">
+          
+          <div class="account_information" id="passwordGroup">
             <label for="password">Password</label>
             <div class="input-field">
               <i class="fa-solid fa-lock" style="color: rgb(52, 50, 50);"></i>
               <input id="password" type="password" placeholder="Enter your password" required>
+              <span class="password-toggle" id="passwordToggle">👁️</span>
             </div>
+            <div class="error-message" id="passwordError">The password must be at least 6 characters long</div>
           </div>
           <button type="submit" class="account_form_button">Sign in</button>
           <p>Do not have account yet? <a id="linkCreateAccount" href="#createAccount"> Sign up</a></p>
