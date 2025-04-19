@@ -1,6 +1,6 @@
 const words = {
-    easy: ["apple", "banana", "grape", "orange", "cherry", "peach", "melon", "kiwi", "plum", "lime", 
-           "lemon", "pear", "berry", "mango", "fig", "date", "fruit", "sweet", "tasty", "juicy"],
+    easy: ["the", "chair", "light", "train", "house", "dog", "water", "plant", "is", "cloud",
+         "smile", "brick", "dream", "stone", "best"],
     medium: ["keyboard", "monitor", "printer", "charger", "battery", "computer", "laptop", "tablet", 
              "speaker", "headset", "wireless", "memory", "storage", "screen", "display", "camera", 
              "router", "network", "software", "hardware"],

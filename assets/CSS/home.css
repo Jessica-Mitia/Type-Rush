@@ -122,15 +122,8 @@ nav ul li a:hover {
     position: absolute;
     width: 100%;
     height: 100%;
-    /* background: repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(76, 175, 80, 0.03) 20px, rgba(76, 175, 80, 0.03) 40px);
-    animation: background-scroll 20s linear infinite; */
-    background-image: url(../Images/téléchargement\ \(2\).jpg);
+    background:linear-gradient(180deg , rgba(1, 64, 1, 0.845), black)  
 }
-
-/* @keyframes background-scroll {
-    from { background-position: 0 0; }y
-    to { background-position: 0 1000px; }
-} */
 
 .hero-content {
     position: relative;
@@ -316,72 +309,12 @@ nav ul li a:hover {
     background-color: rgba(76, 175, 80, 0.1);
 }
 
-footer {
-    background-color: #1a1a1a;
-    padding: 3rem 0;
-    color: #b3b3b3;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-}
-
-.footer-col h4 {
-    color: #fff;
-    margin-bottom: 1.5rem;
-    font-size: 1.2rem;
-}
-
-.footer-col ul {
-    list-style: none;
-}
-
-.footer-col ul li {
-    margin-bottom: 0.8rem;
-}
-
-.footer-col ul li a {
-    color: #b3b3b3;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-col ul li a:hover {
-    color: #4CAF50;
-}
-
-.social-icons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #212121;
-    color: #fff;
-    transition: background-color 0.3s;
-    text-decoration: none;
-}
-
-.social-icons a:hover {
-    background-color: #4CAF50;
-}
-
-.copyright {
+.footer{
+    background-color: #333333a3;
     text-align: center;
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid #333;
+    padding-block: 5px;
+    margin-bottom: 20px;
 }
-
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
@@ -408,13 +341,20 @@ footer {
         margin: 0 auto;
         text-align: center;
         align-items: center;
-        padding-right:10% 
+        padding-right:10px;
+        width: 400px;
+        transform: none;
     }
     
     .hero-content h2{
         font-size: 30px;
+        transform: none;
+        width: 400px;
+        white-space: normal;
         flex-wrap: wrap;
+        animation: none;
     }
+
     .hero-img {
         position: relative;
         right: auto;
@@ -432,4 +372,5 @@ footer {
         width: 80%;
         margin-bottom: 1rem;
     }
+
 }
