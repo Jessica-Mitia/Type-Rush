@@ -1,12 +1,25 @@
-# Vanilla Typing 
+# TypeRush - Web Typing Test
 
 ## Introduction
-Hi ! This is a simple typing game using HTML, CSS, and Vanilla Javascript (which means no React, no NextJS). You can use it as your own, just make sure you enrich it with new features, and a sexy design. 
+This project is an enriched and fully completed version of the original Vanilla Typing assignment. Built strictly with HTML, CSS, and Vanilla Javascript, **TypeRush** is an interactive typing game designed to help users test and improve their typing speed and accuracy in a modern interface.
 
-## Constraints
-Since this is an HTML project, you can use your favorite CSS framework of choice : Tailwind, Bootstrap, or any icon library. Just... don't force it to be a React or a Svelte or a Vue project. Just keep on building on top of it. 
-- Deadline : 19th of April 2025, 23h59 at most ;
-- How : invite me to collaborate on your repo ;
-- Added bonus if you know how to use Git well.
+## New Features Implemented
+- **Modern UI/UX Redesign**: A sleek, dark-themed aesthetic with completely custom CSS and responsive layouts.
+- **Dynamic Typing Engine**: Live highlighting logic tracking every keypress, calculating your exact Words Per Minute (WPM) and precision percentage.
+- **Customizable Tests**: 
+  - 3 difficulty levels (Easy, Medium, Hard) with curated dictionaries.
+  - Multi-length timers (15s, 30s, 60s, 120s).
+- **Firebase Authentication**: Fully functional external Backend authentication for User Login and Registration natively in Vanilla JS using Firebase compat scripts (no bundler setup required). It handles sessions, profile syncs, and friendly error alerts.
+- **Persistent Profile & Statistics**: The application uses browser memory (`localStorage`) to record test performances over time. Players can log in and view their personal Dashboard showing their **Highest WPM, Lowest WPM, and Average Score**.
 
-And most important of all, have fun 🔥
+## Technical Details
+- **Frameworks**: 100% Vanilla JS (No React, NextJS, or Svelte).
+- **Graphing**: Integration with Chart.js to map speed and accuracy evolutions instantly at the end of a round.
+- **Architecture**: Separated assets (`/CSS`, `/JS`, `/Images`) to preserve logic modularity.
+
+## How to Run it
+1. Simply clone or download the repository.
+2. If configuring your own Database, enable **Email/Password** Authentication through the Firebase Console and overwrite the keys in `assets/JS/firebase-config.js`.
+3. Double-click on `home.html` or `login.html` to open the site locally in any web browser and enjoy!
+
+*Built for HEI L1 - WEB1 Final Exam (April 2025)*
