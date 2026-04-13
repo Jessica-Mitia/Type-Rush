@@ -237,10 +237,17 @@ nav ul li a:hover {
     font-size: 1.1rem;
     color: #ddd;
     margin-bottom: 1rem;
+    text-align: center;
+}
+.code-text .text h2{
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
 .code-text .text span{
     color: #4CAF50;
     font-weight: bold;
+    margin-right: 3rem;
+    margin-left: 3rem;
 }
 
 

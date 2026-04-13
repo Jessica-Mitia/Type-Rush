@@ -16,7 +16,7 @@
     --hover-color: #2c2e31;
     --accent-color: #5e636a;
     --card-bg: #2a2b2d;
-    --font-family-mono: 'Roboto Mono', monospace;
+    --font-family-mono: arial, monospace;
     --font-family-main: 'Poppins', sans-serif;
     --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     --transition: all 0.3s ease;
@@ -185,7 +185,7 @@ header {
 .typing-test-container {
     width: 100%;
     padding: 0 15px;
-    margin: 5% auto;
+    margin: 2% auto;
     flex: 1;
 }
 
@@ -264,7 +264,7 @@ header {
 
 .word-display {
     font-family: var(--font-family-mono);
-    font-size: 40px;
+    font-size: 35px;
     line-height: 1.5;
     margin: 20px 0 20px;
     height: 250px;
@@ -273,6 +273,7 @@ header {
     padding: 10px;
     border-radius: var(--border-radius);
     position: relative;
+    text-align: center;
 }
 
 .word {
