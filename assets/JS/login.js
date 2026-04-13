@@ -1,3 +1,5 @@
+redirectIfLoggedIn("index.html");
+
 const create = document.getElementById("linkCreateAccount");
 const haveAcc = document.getElementById("linkLogin");
 const formLogin = document.getElementById("Login");
@@ -67,14 +69,17 @@ confirmPasswordToggle.addEventListener("click", function () {
 });
 
 // Connexion
-formLogin.addEventListener("submit", function (e) {
+formLogin.addEventListener("submit", async function (e) {
   e.preventDefault();
   const usernameGroup = document.getElementById('usernameGroup');
   const passwordGroup = document.getElementById('passwordGroup');
+  const emailInput = document.getElementById('username'); // In the login form, id is "username" but it should probably be email or they use email? Wait, let's look at the html
+  const passwordError = document.querySelector('#Login #passwordError'); 
 
   // Réinitialiser les erreurs
   usernameGroup.classList.remove("error");
   passwordGroup.classList.remove("error");
+  if(passwordError) passwordError.textContent = "The password must be at least 6 characters long";
 
   let isValid = true;
 
@@ -83,21 +88,40 @@ formLogin.addEventListener("submit", function (e) {
     isValid = false;
   }
 
-  getUsername();
-  if (isValid) window.location.href = 'index.html'
+  if (isValid) {
+    try {
+      // User is apparently using the username field to type an email, or I should just use email.
+      // Wait, let's treat "username" input down here as email since firebase uses email.
+      await auth.signInWithEmailAndPassword(emailInput.value, passwordInput.value);
+      window.location.href = 'index.html';
+    } catch(error) {
+      passwordGroup.classList.add("error");
+      let msg = "Une erreur est survenue.";
+      if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') {
+        msg = "Email ou mot de passe incorrect.";
+      } else if (error.code === 'auth/configuration-not-found') {
+        msg = "Email/Password n'est pas activé sur Firebase Console.";
+      }
+      if(passwordError) passwordError.textContent = msg;
+    }
+  }
 });
 
 // Inscription
-formCreateAcc.addEventListener("submit", function (e) {
+formCreateAcc.addEventListener("submit", async function (e) {
   e.preventDefault();
   const regPasswordGroup = document.getElementById('regPasswordGroup');
   const confirmPasswordGroup = document.getElementById('confirmPasswordGroup');
   const confirmPasswordError = document.getElementById('confirmPasswordError');
+  const emailInput = document.getElementById('email');
+  const regUsernameInput = document.getElementById('regUsername');
+  const regPasswordError = document.querySelector('#CreateAccount #passwordError');
 
   // Réinitialiser les erreurs
   regPasswordGroup.classList.remove("error");
   confirmPasswordGroup.classList.remove("error");
   confirmPasswordError.textContent = '';
+  if(regPasswordError) regPasswordError.textContent = "The password must be at least 6 characters long";
 
   let isValid = true;
 
@@ -112,6 +136,25 @@ formCreateAcc.addEventListener("submit", function (e) {
     isValid = false;
   }
 
-  getUsername();
-  if (isValid) window.location.href = "index.html";
+  if (isValid) {
+    try {
+      // Firebase create user
+      const userCredential = await auth.createUserWithEmailAndPassword(emailInput.value, regPasswordInput.value);
+      // Update display name
+      await userCredential.user.updateProfile({ displayName: regUsernameInput.value });
+      
+      window.location.href = "index.html";
+    } catch (error) {
+      regPasswordGroup.classList.add("error");
+      let msg = "Erreur lors de l'inscription.";
+      if (error.code === 'auth/email-already-in-use') {
+        msg = "Cet email possède déjà un compte.";
+      } else if (error.code === 'auth/configuration-not-found') {
+        msg = "Email/Password n'est pas activé sur Firebase Console.";
+      } else if (error.code === 'auth/invalid-email') {
+        msg = "Le format de l'email est invalide.";
+      }
+      if(regPasswordError) regPasswordError.textContent = msg;
+    }
+  }
 });

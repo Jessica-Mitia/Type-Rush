@@ -21,12 +21,11 @@
         </div>
        
         <div class="user-panel">
-            <a href="index.html"><button class="icon-btn active"><i class="fa-solid fa-keyboard"></i></button></a>
             <div class="user-info">
                 <div class="avatar">D</div>
                 <a href="profil.html"><span class="user-name">demo</span></a>
-                <span class="badge">3</span>
             </div>
+            <button class="icon-btn" onclick="signOutUser()"><i class="fa-solid fa-right-from-bracket"></i></button>
         </div>
     </header>
 
@@ -87,6 +86,13 @@
   
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth-compat.js"></script>
+    <script src="assets/JS/firebase-config.js"></script>
+    <script src="assets/JS/auth.js"></script>
     <script src="assets/JS/script.js"></script>
+    <script>
+        requireAuth("login.html");
+    </script>
 </body>
 </html>

@@ -24,7 +24,7 @@
           </div>
     </header>
     <main>
-        <form id="CreateAccount" class="account_form form--hidden" action="index.html">
+        <form id="CreateAccount" class="account_form form--hidden">
             <h2><i class="fa-solid fa-circle-user"></i>  register</h2>
             <div class="account_information">
                 <label for="email">Email</label>
@@ -60,7 +60,7 @@
             <p>Have already an account? <a id="linkLogin" href="#Login"> Sign in</a></p>
         </form>
         
-        <form id="Login" class="account_form form--unhidden" action="index.html">
+        <form id="Login" class="account_form form--unhidden">
           <h2><i class="fa-solid fa-right-to-bracket"></i>  Sign in</h2>
           <div class="account_information" id="usernameGroup">
             <label for="username">Username</label>
@@ -84,6 +84,10 @@
         </form>
     </main>
 
+    <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth-compat.js"></script>
+    <script src="assets/JS/firebase-config.js"></script>
+    <script src="assets/JS/auth.js"></script>
     <script src="assets/JS/login.js"></script>
 </body>
 </html>
