@@ -528,6 +528,11 @@ const updateFinalStats = () => {
     finalAccuracy.textContent = Math.round(accuracy) + '%';
     finalChars.textContent = `${totalCorrectChars}/${totalTypedChars}`;
     
+    // Save to local storage
+    const currentScores = JSON.parse(localStorage.getItem('typerush_scores') || '[]');
+    currentScores.push(Math.round(wpm));
+    localStorage.setItem('typerush_scores', JSON.stringify(currentScores));
+    
     // Show statistics
     testStatistics.style.display = "flex";
 }
